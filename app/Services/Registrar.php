@@ -1,6 +1,6 @@
-<?php namespace App\Services;
+<?php namespace Motty\Logbook\Services;
 
-use App\User;
+use Motty\Logbook\User;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 

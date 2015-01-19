@@ -1,4 +1,4 @@
-<?php namespace App\Events;
+<?php namespace Motty\Logbook\Events;
 
 abstract class Event {
 

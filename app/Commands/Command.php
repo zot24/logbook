@@ -1,4 +1,4 @@
-<?php namespace App\Commands;
+<?php namespace Motty\Logbook\Commands;
 
 abstract class Command {
 

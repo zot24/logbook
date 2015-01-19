@@ -1,4 +1,4 @@
-<?php namespace App;
+<?php namespace Motty\Logbook;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
