@@ -28,7 +28,7 @@ return [
 	|
 	*/
 
-	'model' => 'Motty\Logbook\User',
+	'model' => 'Motty\Logbook\Entities\User',
 
 	/*
 	|--------------------------------------------------------------------------
