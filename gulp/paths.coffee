@@ -14,14 +14,8 @@ module.exports = (config) ->
       'coffee': assetsDir + 'coffee/'
       'scripts': assetsDir + 'scripts/'
       'compiled':
-        'path': assetsDir + 'compiled/'
         'styles' : assetsDir + 'compiled/styles/'
         'scripts' : assetsDir + 'compiled/scripts/'
     'vendor':
-      'path': bowerDir,
-      'jquery': bowerDir + 'jquery/dist/'
-      'bootstrap':
-        'path': bowerDir + 'bootstrap/dist/'
-        'css': bowerDir + 'bootstrap/dist/css/'
-        'js': bowerDir + 'bootstrap/dist/js/'
+      'path': bowerDir
 }
