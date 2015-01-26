@@ -4,5 +4,13 @@
     "html5shiv": "~3.7.2",
     "respond": "~1.4.2",
     "bootstrapvalidator": "~0.5.3"
+  },
+  "overrides": {
+    "html5shiv": {
+      "ignore": true
+    },
+    "respond": {
+      "ignore": true
+    }
   }
 }
