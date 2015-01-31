@@ -144,6 +144,8 @@ return [
 		'Motty\Logbook\Providers\ConfigServiceProvider',
 		'Motty\Logbook\Providers\EventServiceProvider',
 		'Motty\Logbook\Providers\RouteServiceProvider',
+		'Illuminate\View\ViewServiceProvider',
+		'Illuminate\Html\HtmlServiceProvider'
 
 	],
 
@@ -191,6 +193,8 @@ return [
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
 
+		'Form'  => 'Illuminate\Html\FormFacade',
+		'HTML'  => 'Illuminate\Html\HtmlFacade'
 	],
 
 ];
