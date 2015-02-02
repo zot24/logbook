@@ -19,24 +19,24 @@ elixir (mix) ->
     .styles([
       paths.assets.compiled.styles + "vendor.css"
       paths.assets.compiled.styles + "frontend.css"
-    ], "./", paths.output.css + "frontend.css")
+    ], paths.output.css + "frontend.css", "./")
     # backend compiled
     .styles([
       paths.assets.compiled.styles + "vendor.css"
       paths.assets.compiled.styles + "backend.css"
-    ], "./", paths.output.css + "backend.css")
+    ], paths.output.css + "backend.css", "./")
     # frontend scripts
     .scripts([
       paths.assets.compiled.scripts + "vendor.js"
       paths.assets.scripts + "frontend.js"
       paths.assets.compiled.scripts + "frontend.js"
-    ], "./", paths.output.js + "frontend.js")
+    ], paths.output.js + "frontend.js", "./")
     # backend scripts
     .scripts([
       paths.assets.compiled.scripts + "vendor.js"
       paths.assets.scripts + "backend.js"
       paths.assets.compiled.scripts + "backend.js"
-    ], "./", paths.output.js + "backend.js")
+    ], paths.output.js + "backend.js", "./")
     # PHPUnit
     .phpUnit()
     # PHPSpec
