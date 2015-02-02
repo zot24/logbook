@@ -2,9 +2,7 @@
 
 @section('content')
     {!! Form::open(['route' => 'session.store', 'class' => 'form-signin', 'role' => 'form']) !!}
-        <h2 class="form-signin-heading">
-            Login
-        </h2>
+        <h2 class="form-signin-heading">Login</h2>
 
         {!! Form::label('email', 'Email', array('class' => 'sr-only')) !!}
         {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Email', 'required', 'autofocus']) !!}
