@@ -1,6 +1,9 @@
 @extends('layouts.frontend')
 
 @section('content')
+    @include('includes.errors')
+    @include('includes.session.message')
+
     {!! Form::open(['route' => 'session.store', 'class' => 'form-signin', 'role' => 'form']) !!}
         <h2 class="form-signin-heading">Login</h2>
 
