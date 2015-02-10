@@ -7,5 +7,6 @@
   <div class="container">
     @yield('content')
   </div>
+  @include('includes.footer', ['js' => 'js/frontend.js'])
 </body>
 </html>
