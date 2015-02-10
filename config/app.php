@@ -144,6 +144,8 @@ return [
 		'Motty\Logbook\Providers\ConfigServiceProvider',
 		'Motty\Logbook\Providers\EventServiceProvider',
 		'Motty\Logbook\Providers\RouteServiceProvider',
+		'Motty\Logbook\Providers\RepositoryServiceProvider',
+
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Html\HtmlServiceProvider'
 
