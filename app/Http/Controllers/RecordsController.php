@@ -50,7 +50,7 @@ class RecordsController extends Controller
         $record = $this->repository->create($request->all());
 
         if ($record) {
-            return redirect()->route('records.show', $record->id)->with('message', 'The record has been created!');
+            return redirect()->route('records.index')->with('message', 'The record has been created!');
         }
 
         return redirect()->route('records.create')->withInput()->withErrors($this->repository->errors());
