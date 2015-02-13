@@ -14,13 +14,22 @@ class CreateRecordsTable extends Migration
     {
         Schema::create('records', function (Blueprint $table) {
             $table->increments('id');
+
+            $table->integer('user_id')->unsigned();
+
             $table->dateTime('start_time');
             $table->dateTime('stop_time');
             $table->string('pilot_in_command')->nullable();
             $table->integer('num_landings');
             $table->integer('num_dec_landings');
             $table->integer('num_instrumental_approach');
+
             $table->timestamps();
+
+            $table->foreign('user_id')
+                  ->references('id')
+                  ->on('users')
+                  ->onDelete('cascade');
         });
     }
 

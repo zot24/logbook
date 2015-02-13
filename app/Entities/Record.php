@@ -18,6 +18,7 @@ class Record extends Model
      * @var array
      */
     protected $fillable = [
+        'user_id',
         'start_time',
         'stop_time',
         'pilot_in_command',
@@ -35,6 +36,11 @@ class Record extends Model
         'start_time',
         'stop_time'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo('Motty\Logbook\Entities\User');
+    }
 
     /**
      * The attribute that should be always a formatted string date

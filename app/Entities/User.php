@@ -38,11 +38,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         'remember_token'
     ];
 
-    /**
-     * The attributes that are guarded
-     *
-     * @var array
-     */
-    protected $guarded = ['id'];
-
+    public function records()
+    {
+        return $this->hasMany('Motty\Logbook\Entities\Record');
+    }
 }

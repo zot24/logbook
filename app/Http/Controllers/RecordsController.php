@@ -47,7 +47,9 @@ class RecordsController extends Controller
      */
     public function store(RecordRequest $request)
     {
-        $record = $this->repository->create($request->all());
+        $input = $request->all();
+        $input['user_id'] = \Auth::id();
+        $record = $this->repository->create($input);
 
         if ($record) {
             return redirect()->route('records.index')->with('message', 'The record has been created!');
