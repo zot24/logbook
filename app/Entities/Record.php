@@ -62,29 +62,32 @@ class Record extends Model
      * The attribute that should be always an integer
      *
      * @param $numLandings
+     * @return int
      */
-    public function setNumLandingsAttribute($numLandings)
+    public function getNumLandingsAttribute($numLandings)
     {
-        $this->attributes['num_landings'] = (int) $numLandings ?: 0;
+        return (int) $numLandings ?: 0;
     }
 
     /**
      * The attribute that should be always an integer
      *
      * @param $numDecLandings
+     * @return int
      */
-    public function setNumDecLandingsAttribute($numDecLandings)
+    public function getNumDecLandingsAttribute($numDecLandings)
     {
-        $this->attributes['num_dec_landings'] = (int) $numDecLandings ?: 0;
+        return (int) $numDecLandings ?: 0;
     }
 
     /**
      * The attribute that should be always an integer
      *
      * @param $numInstrumentalApproach
+     * @return int
      */
-    public function setNumInstrumentalApproachAttribute($numInstrumentalApproach)
+    public function getNumInstrumentalApproachAttribute($numInstrumentalApproach)
     {
-        $this->attributes['num_instrumental_approach'] = (int) $numInstrumentalApproach ?: 0;
+        return (int) $numInstrumentalApproach ?: 0;
     }
 }

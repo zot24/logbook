@@ -5,14 +5,7 @@
 @include('includes.session.message')
 
 <p>Add a new record!</p>
-{!! Form::open(['route' => ['records.store'], 'class' => 'form-signin', 'role' => 'form']) !!}
-    @include(
-        'records.partials.form',
-        [
-            'submitButtonText' => 'Create',
-            'defaultDateInput' => date('Y-m-d'),
-            'defaultNumericInput' => 0
-        ]
-    )
+{!! Form::model($record = new \Motty\Logbook\Entities\Record, ['route' => ['records.store'], 'class' => 'form-signin', 'role' => 'form']) !!}
+    @include('records.partials.form', ['submitButtonText' => 'Create'])
 {!! Form::close() !!}
 @stop
