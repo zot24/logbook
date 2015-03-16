@@ -6,7 +6,6 @@
 
 <p>Edit the record {!! $record->id !!}!</p>
 {!! Form::model($record, ['method' => 'put', 'route' => ['records.update', $record->id], 'class' => 'form-signin', 'role' => 'form']) !!}
-    @include('records.partials.form', ['submitButtonText' => 'Update']
-    )
+    @include('records.partials.form', ['submitButtonText' => 'Update'])
 {!! Form::close() !!}
 @stop

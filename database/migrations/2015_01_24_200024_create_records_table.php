@@ -20,9 +20,17 @@ class CreateRecordsTable extends Migration
             $table->dateTime('start_time');
             $table->dateTime('stop_time');
             $table->string('pilot_in_command')->nullable();
+            $table->string('aircraft')->nullable();
+            $table->string('aircraft_registration')->nullable();
+            $table->string('aircraft_engine_type')->nullable();
+            $table->string('departure_airport')->nullable();
+            $table->string('arrive_airport')->nullable();
             $table->integer('num_landings');
             $table->integer('num_dec_landings');
             $table->integer('num_instrumental_approach');
+            $table->integer('cross_country');
+            $table->integer('night_hours');
+            $table->integer('instrumental_hours');
 
             $table->timestamps();
 

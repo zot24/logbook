@@ -22,9 +22,17 @@ class Record extends Model
         'start_time',
         'stop_time',
         'pilot_in_command',
+        'aircraft',
+        'aircraft_registration',
+        'aircraft_engine_type',
+        'departure_airport',
+        'arrive_airport',
         'num_landings',
         'num_dec_landings',
-        'num_instrumental_approach'
+        'num_instrumental_approach',
+        'cross_country',
+        'night_hours',
+        'instrumental_hours'
     ];
 
     /**
@@ -95,5 +103,38 @@ class Record extends Model
     public function getNumInstrumentalApproachAttribute($numInstrumentalApproach)
     {
         return (int) $numInstrumentalApproach ?: 0;
+    }
+
+    /**
+     * The attribute that should be always an integer
+     *
+     * @param $crossCountry
+     * @return int
+     */
+    public function getCrossCountryAttribute($crossCountry)
+    {
+        return (int) $crossCountry ?: 0;
+    }
+
+    /**
+     * The attribute that should be always an integer
+     *
+     * @param $nightHours
+     * @return int
+     */
+    public function getNightHoursAttribute($nightHours)
+    {
+        return (int) $nightHours ?: 0;
+    }
+
+    /**
+     * The attribute that should be always an integer
+     *
+     * @param $instrumentalHours
+     * @return int
+     */
+    public function getInstrumentalHoursAttribute($instrumentalHours)
+    {
+        return (int) $instrumentalHours ?: 0;
     }
 }
