@@ -157,6 +157,26 @@ abstract class AbstractEloquentRepository
     }
 
     /**
+     * Return all results that have a required relationship where a condition happens
+     *
+     * @param string $relation
+     * @param        $key
+     * @param        $operator
+     * @param        $value
+     * @param array  $with
+     *
+     * @return mixed
+     */
+    public function whereHas($relation, $key, $value, $operator = '=', array $with = array())
+    {
+        $entity = $this->make($with);
+
+        return $entity->whereHas($relation, function ($q) use ($key, $value, $operator) {
+            $q->where($key, $value, $operator);
+        })->get();
+    }
+
+    /**
      * Return the errors
      *
      * @return Illuminate\Support\MessageBag
