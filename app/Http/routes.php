@@ -30,13 +30,27 @@ Route::post('register', ['uses' => 'Auth\AuthController@postRegister', 'as' => '
  * Route to index, create, store, show, edit, update, delete and destroy records
  */
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('records', ['uses' => 'RecordsController@index',              'as' => 'records.index']);
-    Route::get('records/create', ['uses' => 'RecordsController@create',      'as' => 'records.create']);
-    Route::post('records', ['uses' => 'RecordsController@store',             'as' => 'records.store']);
-    Route::get('records/{id}', ['uses' => 'RecordsController@show',          'as' => 'records.show']);
-    Route::get('records/{id}/edit', ['uses' => 'RecordsController@edit',     'as' => 'records.edit']);
-    Route::put('records/{id}', ['uses' => 'RecordsController@update',        'as' => 'records.update']);
-    Route::patch('records/{id}', ['uses' => 'RecordsController@update',      'as' => 'records.update']);
-    Route::get('records/{id}/delete', ['uses' => 'RecordsController@delete', 'as' => 'records.delete']);
-    Route::delete('records/{id}', ['uses' => 'RecordsController@destroy',    'as' => 'records.destroy']);
+    /*
+     * Records routes
+     */
+    Route::resource('records', 'RecordsController');
+    Route::get('records/{records}/delete', ['uses' => 'RecordsController@delete', 'as' => 'records.delete']);
+
+    /*
+     * Aiports routes
+     */
+    Route::resource('airports', 'AirportsController');
+    Route::get('airports/{airports}/delete', ['uses' => 'AirportsController@delete', 'as' => 'airports.delete']);
+
+    /*
+     * Aircrafts routes
+     */
+    Route::resource('aircrafts', 'AircraftsController');
+    Route::get('aircrafts/{aircrafts}/delete', ['uses' => 'AircraftsController@delete', 'as' => 'aircrafts.delete']);
+
+    /*
+     * Profile routes
+     */
+    Route::resource('profile', 'ProfileController');
+    Route::get('profile/{profile}/delete', ['uses' => 'ProfileController@delete', 'as' => 'profile.delete']);
 });
