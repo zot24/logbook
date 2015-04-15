@@ -18,21 +18,28 @@ class Record extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id',
-        'start_time',
+        /*
+         * Aircraft params
+         */
+        'aircraft_id',
+
+        /*
+         * Airport params
+         */
+        'arrive_airport_id',
+        'departure_airport_id',
+
+        /*
+         * Other params
+         */
         'stop_time',
-        'pilot_in_command',
-        'aircraft',
-        'aircraft_registration',
-        'aircraft_engine_type',
-        'departure_airport',
-        'arrive_airport',
-        'num_landings',
-        'num_dec_landings',
-        'num_instrumental_approach',
-        'cross_country',
+        'start_time',
         'night_hours',
-        'instrumental_hours'
+        'num_landings',
+        'cross_country',
+        'num_dec_landings',
+        'instrumental_hours',
+        'num_instrumental_approach'
     ];
 
     /**
@@ -45,9 +52,36 @@ class Record extends Model
         'stop_time'
     ];
 
+    /*
+     * User relation
+     */
     public function user()
     {
         return $this->belongsTo('Motty\Logbook\Entities\User');
+    }
+
+    /*
+     * Aircraft relation
+     */
+    public function aircraft()
+    {
+        return $this->hasOne('Motty\Logbook\Entities\Aircraft');
+    }
+
+    /*
+     * Arrive airport relation
+     */
+    public function arriveAirport()
+    {
+        return $this->hasOne('Motty\Logbook\Entities\Airport', 'id', 'arrive_airport_id');
+    }
+
+    /*
+     * Departure airport relation
+     */
+    public function departureAirport()
+    {
+        return $this->hasOne('Motty\Logbook\Entities\Airport', 'id', 'departure_airport_id');
     }
 
     /**
