@@ -18,14 +18,13 @@ class RecordsController extends Controller
     }
 
     /**
-     * Display a listing of the User's records
+     * Display a listing of the user's records
      *
      * @return View
      */
     public function index()
     {
         $records = $this->repository->all();
-
         return view('records.index', compact('records'));
     }
 

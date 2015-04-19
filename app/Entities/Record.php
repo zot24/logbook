@@ -18,20 +18,6 @@ class Record extends Model
      * @var array
      */
     protected $fillable = [
-        /*
-         * Aircraft params
-         */
-        'aircraft_id',
-
-        /*
-         * Airport params
-         */
-        'arrive_airport_id',
-        'departure_airport_id',
-
-        /*
-         * Other params
-         */
         'stop_time',
         'start_time',
         'night_hours',
@@ -71,7 +57,7 @@ class Record extends Model
     /*
      * Arrive airport relation
      */
-    public function arriveAirport()
+    public function arrive()
     {
         return $this->hasOne('Motty\Logbook\Entities\Airport', 'id', 'arrive_airport_id');
     }
@@ -79,7 +65,7 @@ class Record extends Model
     /*
      * Departure airport relation
      */
-    public function departureAirport()
+    public function departure()
     {
         return $this->hasOne('Motty\Logbook\Entities\Airport', 'id', 'departure_airport_id');
     }
