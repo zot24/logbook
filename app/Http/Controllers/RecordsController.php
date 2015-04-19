@@ -29,7 +29,7 @@ class RecordsController extends Controller
     }
 
     /**
-     * Display the form to create a new record
+     * Show the form for creating a new record
      *
      * @return View
      */
@@ -39,7 +39,7 @@ class RecordsController extends Controller
     }
 
     /**
-     * Store a new record
+     * Store a newly created record in the database
      *
      * @param RecordRequest $request
      * @return Redirect
