@@ -15,7 +15,11 @@ class CreateAircraftsTable extends Migration
         Schema::create('aircrafts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('type');
+            $table->string('name');
+            $table->string('weight');
+            $table->string('capacity');
             $table->string('engine_type');
+            $table->string('manufacturer');
             $table->string('registration_number');
             $table->timestamps();
 
