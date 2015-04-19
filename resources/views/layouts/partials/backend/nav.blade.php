@@ -12,11 +12,15 @@
 
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
+        <li><a href="/records">Records</a></li>
+        <li><a href="/airports">Airports</a></li>
+        <li><a href="/aircrafts">Aircrafts</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-          @if (!Auth::guest())
-              <li><a href="/logout">Logout</a></li>
-          @endif
+        <li><a href="/profile">Profile</a></li>
+        @if (!Auth::guest())
+          <li><a href="/logout">Logout</a></li>
+        @endif
       </ul>
     </div>
   </div>
