@@ -1,9 +1,12 @@
 <?php namespace Motty\Logbook\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use Motty\Logbook\Entities\Record;
-use Motty\Logbook\Repositories\Record\EloquentRecordRepository;
+use Motty\Logbook\Repositories\Aircraft\AircraftRepositoryInterface;
+use Motty\Logbook\Repositories\Aircraft\EloquentAircraftRepository;
 use Motty\Logbook\Repositories\Record\RecordRepositoryInterface;
+use Motty\Logbook\Repositories\Record\EloquentRecordRepository;
+
+use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -25,6 +28,7 @@ class RepositoryServiceProvider extends ServiceProvider
     public function register()
     {
         $this->registerRecordRepository();
+        $this->registerAircraftRepository();
 
     }
 
@@ -35,6 +39,16 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $this->app->bind(RecordRepositoryInterface::class, function () {
             return new EloquentRecordRepository(new Record);
+        });
+    }
+
+    /**
+     * Register Aircraft Repository
+     */
+    public function registerAircraftRepository()
+    {
+        $this->app->bind(AircraftRepositoryInterface::class, function () {
+            return new EloquentAircraftRepository(new Record);
         });
     }
 }
