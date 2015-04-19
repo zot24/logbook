@@ -16,6 +16,19 @@ class CreateAirportsTable extends Migration
             $table->increments('id');
             $table->char('acronym', 4);
             $table->timestamps();
+
+            /*
+             * User params
+             */
+            $table->integer('user_id')->unsigned();
+
+            /*
+             * User foreign key
+             */
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
         });
     }
 

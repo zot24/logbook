@@ -18,6 +18,19 @@ class CreateAircraftsTable extends Migration
             $table->string('engine_type');
             $table->string('registration_number');
             $table->timestamps();
+
+            /*
+             * User params
+             */
+            $table->integer('user_id')->unsigned();
+
+            /*
+             * User foreign key
+             */
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
         });
     }
 

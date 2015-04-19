@@ -16,6 +16,11 @@ class CreateRecordsTable extends Migration
             $table->increments('id');
 
             /*
+             * User params
+             */
+            $table->integer('user_id')->unsigned();
+
+            /*
              * Aircraft params
              */
             $table->integer('aircraft_id')->unsigned()->nullable();
@@ -37,8 +42,15 @@ class CreateRecordsTable extends Migration
             $table->integer('num_dec_landings');
             $table->integer('instrumental_hours');
             $table->integer('num_instrumental_approach');
-
             $table->timestamps();
+
+            /*
+             * User foreign key
+             */
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
 
             /*
              * Aircraft foreign key

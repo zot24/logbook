@@ -19,4 +19,14 @@ class Airport extends Model
     protected $fillable = [
         'acronym'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo('Motty\Logbook\Entities\User');
+    }
+
+    public function record()
+    {
+        return $this->belongsTo('Motty\Logbook\Entities\Record');
+    }
 }
