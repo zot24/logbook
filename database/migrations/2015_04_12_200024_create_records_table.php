@@ -14,6 +14,15 @@ class CreateRecordsTable extends Migration
     {
         Schema::create('records', function (Blueprint $table) {
             $table->increments('id');
+            $table->dateTime('stop_time');
+            $table->dateTime('start_time');
+            $table->integer('night_hours');
+            $table->integer('num_landings');
+            $table->integer('cross_country');
+            $table->integer('num_dec_landings');
+            $table->integer('instrumental_hours');
+            $table->integer('num_instrumental_approach');
+            $table->timestamps();
 
             /*
              * User params
@@ -30,19 +39,6 @@ class CreateRecordsTable extends Migration
              */
             $table->integer('arrive_airport_id')->unsigned()->nullable();
             $table->integer('departure_airport_id')->unsigned()->nullable();
-
-            /*
-             * Other params
-             */
-            $table->dateTime('stop_time');
-            $table->dateTime('start_time');
-            $table->integer('night_hours');
-            $table->integer('num_landings');
-            $table->integer('cross_country');
-            $table->integer('num_dec_landings');
-            $table->integer('instrumental_hours');
-            $table->integer('num_instrumental_approach');
-            $table->timestamps();
 
             /*
              * User foreign key

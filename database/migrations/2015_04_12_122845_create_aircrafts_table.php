@@ -16,8 +16,8 @@ class CreateAircraftsTable extends Migration
             $table->increments('id');
             $table->string('type');
             $table->string('name');
-            $table->string('weight');
-            $table->string('capacity');
+            $table->integer('weight');
+            $table->integer('capacity');
             $table->string('engine_type');
             $table->string('manufacturer');
             $table->string('registration_number');
