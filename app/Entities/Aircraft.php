@@ -23,7 +23,12 @@ class Aircraft extends Model
         'capacity',
         'engine_type',
         'manufacturer',
-        'registration_number'
+        'registration_number',
+
+        /*
+         * User foreign key
+         */
+        'user_id'
     ];
 
     public function user()

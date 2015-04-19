@@ -25,7 +25,12 @@ class Record extends Model
         'cross_country',
         'num_dec_landings',
         'instrumental_hours',
-        'num_instrumental_approach'
+        'num_instrumental_approach',
+
+        /*
+         * User foreign key
+         */
+        'user_id'
     ];
 
     /**

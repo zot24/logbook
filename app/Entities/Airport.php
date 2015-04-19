@@ -17,7 +17,12 @@ class Airport extends Model
      * @var array
      */
     protected $fillable = [
-        'acronym'
+        'acronym',
+
+        /*
+         * User foreign key
+         */
+        'user_id'
     ];
 
     public function user()
