@@ -3,7 +3,7 @@
 @section('content')
 @include('includes.session.message')
 
-<p>ID: {!! $record->id !!}</p><br/>
+<p>ID: {!! $record->id !!}</p>
 <p>Start time (Rotor start): {!! $record->start_time !!}</p>
 <p>Stop time (Rotor stop): {!! $record->stop_time !!}</p>
 <p>Pilot in Command: {!! $record->pilot_in_command !!}</p>

@@ -26,7 +26,7 @@
                 <td>{!! $aircraft->name !!}</td>
                 <td>{!! $aircraft->weight !!}</td>
                 <td>{!! $aircraft->capacity !!}</td>
-                <td>{!! $aircraft->engine !!}</td>
+                <td>{!! $aircraft->engine_type !!}</td>
                 <td>{!! $aircraft->manufacturer !!}</td>
                 <td>{!! $aircraft->registration_number !!}</td>
                 <td><a href="{!! route('aircrafts.show', ['id' => $aircraft->id]) !!}">View</a></td>

@@ -59,47 +59,68 @@ class AircraftsController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display a specific aircraft by id
      *
      * @param  int  $id
      * @return Response
      */
     public function show($id)
     {
-        //
+        $aircraft = $this->repository->find($id);
+        return view('aircrafts.show', compact('aircraft'));
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Display the form to edit a specific record
      *
      * @param  int  $id
      * @return Response
      */
     public function edit($id)
     {
-        //
+        $aircraft = $this->repository->find($id);
+        return view('aircrafts.edit', compact('aircraft'));
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update an existing aircraft
      *
+     * @param AircraftRequest $request
      * @param  int  $id
      * @return Response
      */
-    public function update($id)
+    public function update(AircraftRequest $request, $id)
     {
-        //
+        $aircraft = $this->repository->update($id, $request->all());
+
+        if ($aircraft) {
+            return redirect()->route('aircrafts.index')->with('message', 'The aircraft $aircraft->registration_number has been updated!');
+        }
+
+        return redirect()->route('aircrafts.edit', $id)->withInput()->withErrors($this->repository->errors());
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Display the form to delete a aircraft
+     *
+     * @param int $id
+     * @return View
+     */
+    public function delete($id)
+    {
+        $aircraft = $this->repository->find($id);
+        return view('aircrafts.delete', compact('aircraft'));
+    }
+
+    /**
+     * Remove the specified aircraft
      *
      * @param  int  $id
      * @return Response
      */
     public function destroy($id)
     {
-        //
+        $aircraft = $this->repository->delete($id);
+        return redirect()->route('aircrafts.index')->with('message', "The aircraft $aircraft->registration_number has been deleted!");
     }
-
 }
